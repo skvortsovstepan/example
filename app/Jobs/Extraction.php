@@ -14,28 +14,28 @@ class Extraction implements ShouldQueue
 
     private $data;
 
-    private $__some_item_2__;
+    private $SomeItem2;
 
-    private $__some__item__5_;
+    private $SomeItem5;
 
     private $extraction_service_id;
 
-    private $__some__item_1__;
+    private $SomeItem1;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($data, $__some__item_1__, $__some_item_2__, $__some__item__5_, $extraction_service_id)
+    public function __construct($data, $SomeItem1, $SomeItem2, $SomeItem5, $extraction_service_id)
     {
         $this->data = $data;
 
-        $this->__some_item_2__ = $__some_item_2__;
+        $this->SomeItem2 = $SomeItem2;
 
-        $this->__some__item__5_ = $__some__item__5_;
+        $this->SomeItem5 = $SomeItem5;
 
-        $this->__some__item_1__ = $__some__item_1__;
+        $this->SomeItem1 = $SomeItem1;
 
         $this->extraction_service_id = $extraction_service_id;
     }
@@ -47,30 +47,30 @@ class Extraction implements ShouldQueue
      */
     public function handle()
     {
-        $this->__some__item_1__->__some_item_2___offline = 1;
-        $this->__some__item_1__->save();
+        $this->SomeItem1->SomeItem2_offline = 1;
+        $this->SomeItem1->save();
 
         if($this->data['is_new']){
 
-            $response = $this->__some__item_1__->createNew__SomeItem_1__(
-                $this->__some_item_2__,
+            $response = $this->SomeItem1->createNew__SomeItem_1__(
+                $this->SomeItem2,
                 $this->data['start'],
                 $this->data['end'],
                 $this->data['all']
             );
         }
         else{
-            $response = $this->__some__item_1__->extract__Things__From__some_item_2___(
-                $this->__some_item_2__,
+            $response = $this->SomeItem1->extract__Things__FromSomeItem2_(
+                $this->SomeItem2,
                 $this->data['start'],
                 $this->data['end'],
                 $this->data['all']
             );
         }
 
-        $this->__some__item_1__->__some_item_2___offline = null;
+        $this->SomeItem1->SomeItem2_offline = null;
 
-        $this->__some__item_1__->save();
+        $this->SomeItem1->save();
 
         $extraction_service = Service::find($this->extraction_service_id);
 

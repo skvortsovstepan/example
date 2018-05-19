@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Config;
 use Closure;
 
-class BuildOrUpdate__some_item_1__
+class BuildOrUpdate__SomeItem_1__
 {
     /**
      * Handle an incoming request.
@@ -16,12 +16,12 @@ class BuildOrUpdate__some_item_1__
      */
     public function handle($request, Closure $next)
     {
-        $__some__item__5__id = __some_auth_service__::id();
+        $SomeItem5_id = SomeAuthService::id();
 
-        $is_default = in_array($__some__item__5__id, Config::get('__some_config__'));
+        $is_default = in_array($SomeItem5_id, Config::get('someConfig'));
 
-        if(isset($request['0']['__some_item_1___id']) &&
-            __some_item_1__::find($request['0']['__some_item_1___id'])->__some_item_1___owner_id != $__some__item__5__id &&
+        if(isset($request['0']['SomeItem1_id']) &&
+            SomeItem1::find($request['0']['SomeItem1_id'])->SomeItem1_owner_id != $SomeItem5_id &&
             !$is_default
         )
         {

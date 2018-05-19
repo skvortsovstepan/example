@@ -2,11 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use App\__some_item_1__;
 use Closure;
 use Illuminate\Support\Facades\Config;
 
-class __some_item_1__ProtectorThird
+class SomeItem1_ProtectorFourth
 {
     /**
      * Handle an incoming request.
@@ -19,14 +18,14 @@ class __some_item_1__ProtectorThird
     {
         $segments = $request->segments();
 
-        $__some__item__5__id = $segments[count($segments)-1];
-        $__some_item_1___id = $segments[count($segments)-3];
+        $SomeItem5_id = $segments[count($segments)-1];
+        $SomeItem1_id = $segments[count($segments)-4];
 
-        $__some_item_1___owner_id = __some_item_1__::find($__some_item_1___id)->__some_item_1___owner_id;
+        $SomeItem1_owner_id = SomeItem1::find($SomeItem1_id)->SomeItem1_owner_id;
 
-        $is_default = in_array($__some_item_1___owner_id, Config::get('__some_config__'));
+        $is_default = in_array($SomeItem1_owner_id, Config::get('someConfig'));
 
-        $checked = $__some__item__5__id == $__some_item_1___owner_id ? true : false;
+        $checked = $SomeItem5_id == $SomeItem1_owner_id ? true : false;
 
         if($checked || $is_default){
             return $next($request);

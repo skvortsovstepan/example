@@ -17,19 +17,19 @@ class CheckLock
     {
         $segments = $request->segments();
 
-        $__some_item_2___id = $segments[count($segments)-2];
+        $SomeItem2_id = $segments[count($segments)-2];
 
-        $__some__item__5__id = __some_auth_service__::id();
+        $SomeItem5_id = SomeAuthService::id();
 
-        $__some_item_2___ = __some_item_2__::find($__some_item_2___id);
+        $SomeItem2_ = SomeItem2::find($SomeItem2_id);
 
-        $last_lock_update = date_create_from_format ("Y-m-d H:i:s", $__some_item_2___->__some_item_2______some_item_9__s_lock);
+        $last_lock_update = date_create_from_format ("Y-m-d H:i:s", $SomeItem2_->SomeItem2__SomeItem9s_lock);
         $now_date = date_create(date("Y-m-d H:i:s"));
 
-        if($__some_item_2___->__some_item_2______some_item_9__s_locked_by != $__some__item__5__id
-            && $__some_item_2___->__some_item_2______some_item_9__s_locked_by
+        if($SomeItem2_->SomeItem2__SomeItem9s_locked_by != $SomeItem5_id
+            && $SomeItem2_->SomeItem2__SomeItem9s_locked_by
             && $last_lock_update
-            && date_diff($last_lock_update, $now_date)->format("%r%i") < \Config::get('__some_config__')
+            && date_diff($last_lock_update, $now_date)->format("%r%i") < \Config::get('someConfig')
         ){
             return response(json_encode(['data' => false]), 200);
         }

@@ -38,7 +38,7 @@ class Sync implements ShouldQueue
 
         $sync_service->save();
 
-        $sync_result = __project__Sync::sync(Storage::disk(\Config::get('__some_config__')), $sync_date);
+        $sync_result = ProjectSync::sync(Storage::disk(\Config::get('someConfig')), $sync_date);
 
         $sync_service->service_data = serialize($sync_result);
 

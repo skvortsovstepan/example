@@ -20,9 +20,9 @@ class ContentPermissionById
 
         $id = $segments[count($segments)-1];
 
-        $__some__item__5__id = __some__auth_service__::id();
+        $SomeItem5_id = SomeAuthService::id();
 
-        $checked = $__some__item__5__id==$id?true:false;
+        $checked = $SomeItem5_id==$id?true:false;
 
         if($checked){
             return $next($request);

@@ -16,7 +16,7 @@ class Cors
     public function handle($request, Closure $next)
     {
         $headers = [
-            'Access-Control-Allow-Origin'      => \Config::get('__some_config__'),
+            'Access-Control-Allow-Origin'      => \Config::get('someConfig'),
             //'Access-Control-Allow-Methods'     => 'POST, OPTIONS',
             'Access-Control-Allow-Methods'   => 'POST, GET, OPTIONS, PUT, DELETE',
             'Access-Control-Allow-Credentials' => 'true',

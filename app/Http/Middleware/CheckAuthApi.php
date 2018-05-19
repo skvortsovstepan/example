@@ -15,7 +15,7 @@ class CheckAuthApi
      */
     public function handle($request, Closure $next)
     {
-        if(!__some_auth_service__::isLoggedIn()){
+        if(!SomeAuthService::isLoggedIn()){
             return response('Unauthorized action.', 403);
         }
         return $next($request);

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class __some_item__3_Owner
+class SomeItem3Owner
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,13 @@ class __some_item__3_Owner
     {
         $group_id = $request->get('*');
 
-        $group = __some_item_3__::find($group_id);
+        $group = SomeItem3::find($group_id);
 
         if(!$group){
             return response(' *** not found', 404);
         }
 
-        if($group->__some_item__3___owner_id != __some_auth_service__::id()){
+        if($group->SomeItem3__owner_id != SomeAuthService::id()){
             return response('Unauthorized action', 403);
         }
 

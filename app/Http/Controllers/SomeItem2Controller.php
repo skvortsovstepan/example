@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use m1r1k\SejdaConsole\Sejda;
 
-class SomeItem2Controller extends Controller
+class someItem2Controller extends Controller
 {
     public function SomeItem7s(SomeItem2 $SomeItem2, SomeItem5 $SomeItem5)
     {
